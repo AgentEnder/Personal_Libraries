@@ -32,10 +32,10 @@ end
 function checkStr(str)
 	if devConsole == false then
 		local fail = false
-		if str == "settingNum1" then //Check for various phrases (cheat-codes)
-			//Do something based on cheat code entered
-		elseif str == "devConsole" //Enable developer console
-			devConsole = true //Turn on developer console
+		if str == "settingNum1" then --Check for various phrases (cheat-codes)
+			--Do something based on cheat code entered
+		elseif str == "devConsole" --Enable developer console
+			devConsole = true --Turn on developer console
 		else
 			fail = true
 		end
@@ -46,10 +46,10 @@ function checkStr(str)
 		end
 		consoleStr = ""
 	else //Use dev console
-		print("Running Code:" .. consoleStr) //Tell user what they are running
-		love.filesystem.write("dev.lua", consoleStr) //save code to file
-		local chunk = love.filesystem.load("dev.lua", consoleStr) //load file
-		chunk() //Run file
-		consoleStr = "" //reset consoleStr
+		print("Running Code:" .. consoleStr) --Tell user what they are running
+		love.filesystem.write("dev.lua", consoleStr) --save code to file
+		local chunk = love.filesystem.load("dev.lua", consoleStr) --load file
+		chunk() --Run file
+		consoleStr = "" --reset consoleStr
 	end
 end
