@@ -26,16 +26,12 @@ function checkTiles(obj)
 			collision.left = true
 		--	print("left:" .. v.string)
 		end
-	end
 	--right side
-	for k, v in pairs(tiles) do
 		if insideBox(obj.x+obj.width+1,obj.y+1,v.x,v.y, v.w,v.h) or insideBox(obj.x+obj.width+1,obj.y+(obj.width - 1),v.x,v.y, v.w, v.h) or insideBox(obj.x+obj.width+1,obj.y+(obj.width/2),v.x,v.y, v.w,v.h)then
 			collision.right = true
 		--	print("right:" .. v.string)
 		end
-	end
 	--bottom
-	for k, v in pairs(tiles) do
 		if insideBox(obj.x+(obj.width-2),obj.y+obj.width+1,v.x,v.y, v.w, v.h) or insideBox(obj.x+2,obj.y+obj.width+1,v.x,v.y, v.w, v.h) or insideBox(obj.x+(obj.width/2),obj.y+obj.width+1,v.x,v.y, v.w, v.h) then
 			collision.bottom = true
 			if v.string == "Rainbow Platform" then
@@ -43,9 +39,7 @@ function checkTiles(obj)
 			end
 		--	print(v.string)
 		end
-	end
 	--top
-	for k, v in pairs(tiles) do
 		if insideBox(obj.x+(obj.width-2),obj.y-1,v.x,v.y,v.w,v.h) or insideBox(obj.x+2,obj.y-1,v.x,v.y, v.w, v.h) then
 			collision.top = true
 		--	print("top")
